@@ -26,6 +26,7 @@ section {
 
 .container {
   padding: 50px 0;
+  width: 100%;
 }
 
 .click {
@@ -56,7 +57,7 @@ section {
 
 .title--secondary,
 .blue {
-  color: #0d6efd !important;
+  color: #0d6efd;
 }
 
 /* Landing Page */
@@ -164,7 +165,7 @@ nav {
 #personal-logo {
   width: 50px;
   height: auto;
-  filter: invert(1);
+  
 }
 
 .nav__link--list {
@@ -200,12 +201,9 @@ nav {
   width: 100%;
 }
 
-
 .fa-adjust {
   font-size: 20px;
 }
-
-/* Projects */
 
 /* Projects Section */
 
@@ -232,7 +230,6 @@ nav {
   overflow: hidden;
 }
 
-/* Image & blur effect */
 .project__img {
   width: 100%;
   display: block;
@@ -244,7 +241,6 @@ nav {
   filter: blur(5px);
 }
 
-/* Overlay background */
 .project__wrapper--bg {
   position: absolute;
   top: 0;
@@ -260,7 +256,6 @@ nav {
   opacity: 0.7;
 }
 
-/* Slide-up description */
 .project__description {
   position: absolute;
   top: 50%;
@@ -277,7 +272,6 @@ nav {
   opacity: 1;
 }
 
-/* Text styling */
 .project__description--title {
   font-size: 40px;
   margin-bottom: 12px;
@@ -295,7 +289,6 @@ nav {
   margin-bottom: 20px;
 }
 
-/* Icons */
 .project__description--links {
   display: flex;
   gap: 20px;
@@ -309,5 +302,56 @@ nav {
 
 .project__description--link:hover {
   transform: scale(1.1);
+}
+
+/* Footer */
+
+footer {
+  background-color: #0d6efd;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__logo--img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.footer__social--list {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.footer__social--list li {
+  list-style: none;
+}
+
+.footer__social--link {
+  color: white;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.footer__social--link:hover {
+  opacity: 0.8;
+}
+
+.footer__copyright {
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
