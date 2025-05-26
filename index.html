@@ -45,6 +45,7 @@
           my skills in modern frontend technologies.<br />
           Here's a little more <b class="title--secondary">about me.</b>
         </p>
+
         <div class="social__list">
           <a href="https://www.linkedin.com/in/justin-adame-022b6b97/" target="_blank" class="social__link click">
             <i class="fa-brands fa-linkedin-in"></i>
@@ -68,32 +69,71 @@
     </a>
 
     <!-- Modal Section -->
-    <div class="modal">
-      <div class="modal__half modal__about">
-        <h3 class="modal__title modal__title--about">A little about me</h3>
-        <h4 class="modal__sub-title modal__sub-title--about"></h4>
-        <p class="modal__para">
-          I'm a passionate new <b class="title--secondary">Frontend Developer</b> with a focus on crafting clean,
-          responsive, and user-friendly interfaces. I'm diving deep into HTML, CSS, and JavaScript, building beautiful
-          web experiences while continuously learning and growing my skills in modern frontend technologies.
-        </p>
-        <div class="modal__languages">
-          <figure>
-            <img src="./assets/html-5.svg" alt="HTML5 Logo">
-          </figure>
-          <figure>
-            <img src="./assets/css-alt.svg" alt="css-alt Logo">
-          </figure>
-          <figure>
-            <img src="./assets/JS LOGO.png" alt="JS Logo">
-          </figure>
-          <figure>
-            <img src="./assets/figma-icon.svg" alt="FIGMA">
-          </figure>
+    <div class="modal__overlay active">
+      <div class="modal">
+        <!-- Left Side -->
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">A little about me</h3>
+          <h4 class="modal__sub-title modal__sub-title--about"></h4>
+          <p class="modal__para">
+            I'm a passionate new <b class="title--secondary">Frontend Developer</b> with a focus on crafting clean,
+            responsive, and user-friendly interfaces. I'm diving deep into HTML, CSS, and JavaScript, building beautiful
+            web experiences while continuously learning and growing my skills in modern frontend technologies.
+          </p>
+
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/html-5.svg" alt="HTML5 Logo" />
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/css-alt.svg" alt="CSS Logo" />
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/JS LOGO.png" alt="JavaScript Logo" />
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img figma-logo" src="./assets/figma-icon.svg" alt="Figma Logo" />
+              <span class="language__name">Figma</span>
+            </figure>
+          </div>
         </div>
-          
+
+        <!-- Right Side -->
+        <div class="modal__half modal__contact">
+          <h3 class="modal__title modal__title--contact">Let's chat!</h3>
+          <h3 class="modal__sub-title modal__sub-title--contact">I am currently seeking out new opportunities.</h3>
+
+          <form id="contact__form" action="">
+            <div class="form__item">
+              <label class="form__item--label" for="name">Name</label>
+              <input class="input" name="user_name" type="text" required />
+            </div>
+
+            <div class="form__item">
+              <label class="form__item--label" for="email">Email</label>
+              <input class="input" name="user_email" type="email" required >
+            </div>
+
+            <div class="form__item">
+              <label class="form__item--label" for="message">Message</label>
+              <textarea class="input" name="message" rows="4" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit" type="submit">Send it my way</button>
+
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking with you soon.
+            
+            </div>
+        </div>
+        
       </div>
-      <div class="modal__half modal__contact">Let's chat!</div>
     </div>
   </section>
 
@@ -104,6 +144,7 @@
         <h1 class="section__title">
           Here are a few of my <span class="blue">projects</span>
         </h1>
+
         <ul class="project__list">
           <li class="project">
             <div class="project__wrapper">
@@ -137,15 +178,18 @@
   <footer>
     <div class="container">
       <div class="row footer__row"></div>
+
       <figure>
         <img class="footer__logo--img" src="./assets/personal-logo-2.png" alt="Personal Logo" />
       </figure>
+
       <div class="footer__social--list">
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">GitHub</a>
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">LinkedIn</a>
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Contact</a>
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Resume</a>
       </div>
+
       <div class="footer__copyright">
         Copyright © 2025 Justin Adame
       </div>
