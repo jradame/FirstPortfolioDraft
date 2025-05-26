@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Justin Adame</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/25b124d258.js" crossorigin="anonymous"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "HTqTsoxXu_8N9-M5H",
+      });
+   })();
+</script>
 </head>
 
 <body>
@@ -17,15 +26,9 @@
         <img id="personal-logo" src="./assets/personal-logo-2.png" alt="Personal Logo" />
       </figure>
       <ul class="nav__link--list">
-        <li class="nav__link">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a>
-        </li>
-        <li class="nav__link">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a>
-        </li>
-        <li class="nav__link">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
-        </li>
+        <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
+        <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
+        <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a></li>
         <li class="nav__link click">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">
             <i class="fa-solid fa-circle-half-stroke"></i>
@@ -45,7 +48,6 @@
           my skills in modern frontend technologies.<br />
           Here's a little more <b class="title--secondary">about me.</b>
         </p>
-
         <div class="social__list">
           <a href="https://www.linkedin.com/in/justin-adame-022b6b97/" target="_blank" class="social__link click">
             <i class="fa-brands fa-linkedin-in"></i>
@@ -60,9 +62,7 @@
       </div>
     </header>
 
-    <button class="mail__btn click">
-      <i class="fa-solid fa-envelope"></i>
-    </button>
+    <button class="mail__btn click"><i class="fa-solid fa-envelope"></i></button>
 
     <a href="#projects" class="scroll">
       <div class="scroll__icon click"></div>
@@ -77,10 +77,8 @@
           <h4 class="modal__sub-title modal__sub-title--about"></h4>
           <p class="modal__para">
             I'm a passionate new <b class="title--secondary">Frontend Developer</b> with a focus on crafting clean,
-            responsive, and user-friendly interfaces. I'm diving deep into HTML, CSS, and JavaScript, building beautiful
-            web experiences while continuously learning and growing my skills in modern frontend technologies.
+            responsive, and user-friendly interfaces...
           </p>
-
           <div class="modal__languages">
             <figure class="modal__language">
               <img class="modal__language--img" src="./assets/html-5.svg" alt="HTML5 Logo" />
@@ -106,33 +104,30 @@
           <h3 class="modal__title modal__title--contact">Let's chat!</h3>
           <h3 class="modal__sub-title modal__sub-title--contact">I am currently seeking out new opportunities.</h3>
 
-          <form id="contact__form" action="">
+          <form id="contact__form" onsubmit="contact(event)">
             <div class="form__item">
               <label class="form__item--label" for="name">Name</label>
               <input class="input" name="user_name" type="text" required />
             </div>
-
             <div class="form__item">
               <label class="form__item--label" for="email">Email</label>
-              <input class="input" name="user_email" type="email" required >
+              <input class="input" name="user_email" type="email" required />
             </div>
-
             <div class="form__item">
               <label class="form__item--label" for="message">Message</label>
               <textarea class="input" name="message" rows="4" required></textarea>
             </div>
             <button id="contact__submit" class="form__submit" type="submit">Send it my way</button>
-
           </form>
+
           <div class="modal__overlay modal__overlay--loading">
             <i class="fas fa-spinner"></i>
           </div>
           <div class="modal__overlay modal__overlay--success">
             Thanks for the message! Looking forward to speaking with you soon.
-            
-            </div>
+          </div>
         </div>
-        
+        <i class="fas fa-times modal__exit click"></i>
       </div>
     </div>
   </section>
@@ -144,7 +139,6 @@
         <h1 class="section__title">
           Here are a few of my <span class="blue">projects</span>
         </h1>
-
         <ul class="project__list">
           <li class="project">
             <div class="project__wrapper">
@@ -154,17 +148,11 @@
                 <h3 class="project__description--title">Car Sales Project</h3>
                 <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
                 <p class="project__description--para">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem deserunt dolor iure odio
-                  reprehenderit tempora repellendus labore nostrum. Deserunt esse expedita qui alias quidem modi a
-                  accusantium sed nam quia.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit...
                 </p>
                 <div class="project__description--links">
-                  <a href="#" class="project__description--link">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a href="#" class="project__description--link">
-                    <i class="fas fa-link"></i>
-                  </a>
+                  <a href="#" class="project__description--link"><i class="fa-brands fa-github"></i></a>
+                  <a href="#" class="project__description--link"><i class="fas fa-link"></i></a>
                 </div>
               </div>
             </div>
@@ -178,23 +166,19 @@
   <footer>
     <div class="container">
       <div class="row footer__row"></div>
-
       <figure>
         <img class="footer__logo--img" src="./assets/personal-logo-2.png" alt="Personal Logo" />
       </figure>
-
       <div class="footer__social--list">
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">GitHub</a>
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">LinkedIn</a>
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Contact</a>
         <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Resume</a>
       </div>
-
       <div class="footer__copyright">
         Copyright © 2025 Justin Adame
       </div>
     </div>
   </footer>
 </body>
-
 </html>
