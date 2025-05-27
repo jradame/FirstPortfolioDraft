@@ -28,16 +28,18 @@ function contact(event) {
 }
 
 let isModalOpen = false;
-
 function toggleModal() {
   if (isModalOpen) {
     isModalOpen = false;
-    document.body.classList.remove("modal--open");
-  } else {
+    return document.body.classList.remove("modal--open");
+  } 
+  else {
     isModalOpen = true;
-    document.body.classList.add("modal--open");
+    document.body.classList += " modal--open";
   }
 }
+
+
 
 
     
