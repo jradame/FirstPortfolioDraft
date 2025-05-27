@@ -6,16 +6,12 @@
   <title>Justin Adame</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/25b124d258.js" crossorigin="anonymous"></script>
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "HTqTsoxXu_8N9-M5H",
-      });
-   })();
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({ publicKey: "HTqTsoxXu_8N9-M5H" });
+    })();
+  </script>
 </head>
 
 <body>
@@ -26,9 +22,15 @@
         <img id="personal-logo" src="./assets/personal-logo-2.png" alt="Personal Logo" />
       </figure>
       <ul class="nav__link--list">
-        <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
-        <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
-        <li class="nav__link" onclick="toggleModal()"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a></li>
+        <li class="nav__link">
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a>
+        </li>
+        <li class="nav__link">
+          <a href="#projects" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a>
+        </li>
+        <li class="nav__link">
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()">Contact</a>
+        </li>
         <li class="nav__link click">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">
             <i class="fa-solid fa-circle-half-stroke"></i>
@@ -42,10 +44,8 @@
         <h1 class="title">Hi!</h1>
         <h1 class="title blue">I'm Justin.</h1>
         <p class="header__para">
-          👋 I'm a passionate new <b class="title--secondary">Frontend Developer</b>
-          with a focus on crafting clean, responsive, and user-friendly interfaces. I'm diving deep into
-          HTML, CSS, and JavaScript, building beautiful web experiences while continuously learning and growing
-          my skills in modern frontend technologies.<br>
+          👋 I'm a passionate new <b class="title--secondary">Frontend Developer</b> focused on building responsive, user-friendly web interfaces.
+          <br>
           Here's a little more <b class="title--secondary click" onclick="toggleModal()">about me.</b>
         </p>
         <div class="social__list">
@@ -62,73 +62,76 @@
       </div>
     </header>
 
-    <button class="mail__btn click" onclick="toggleModal()"><i class="fa-solid fa-envelope"></i></button>
+    <button class="mail__btn click" onclick="toggleModal()">
+      <i class="fa-solid fa-envelope"></i>
+    </button>
 
     <a href="#projects" class="scroll">
-      <div class="scroll__icon click"></div>
+      <div class="scroll__icon click" aria-hidden="true" role="presentation"></div>
     </a>
 
-    <!-- Modal Section -->
-    <div class="modal__overlay active">
-      <div class="modal">
-        <!-- Left Side -->
-        <div class="modal__half modal__about">
-          <h3 class="modal__title modal__title--about">A little about me</h3>
-          <h4 class="modal__sub-title modal__sub-title--about"></h4>
-          <p class="modal__para">
-            I'm a passionate new <b class="title--secondary">Frontend Developer</b> with a focus on crafting clean,
-            responsive, and user-friendly interfaces...
-          </p>
-          <div class="modal__languages">
-            <figure class="modal__language">
-              <img class="modal__language--img" src="./assets/html-5.svg" alt="HTML5 Logo" />
-              <span class="language__name">HTML</span>
-            </figure>
-            <figure class="modal__language">
-              <img class="modal__language--img" src="./assets/css-alt.svg" alt="CSS Logo" />
-              <span class="language__name">CSS</span>
-            </figure>
-            <figure class="modal__language">
-              <img class="modal__language--img" src="./assets/JS LOGO.png" alt="JavaScript Logo" />
-              <span class="language__name">JavaScript</span>
-            </figure>
-            <figure class="modal__language">
-              <img class="modal__language--img figma-logo" src="./assets/figma-icon.svg" alt="Figma Logo" />
-              <span class="language__name">Figma</span>
-            </figure>
-          </div>
+    <!-- Modal -->
+    <div class="modal">
+      <!-- About Section -->
+      <div class="modal__half modal__about">
+        <h3 class="modal__title modal__title--about">A little about me</h3>
+        <h4 class="modal__sub-title modal__sub-title--about"></h4>
+        <p class="modal__para">
+          I'm a passionate <b class="title--secondary">Frontend Developer</b> with a focus on clean, responsive, and user-friendly interfaces...
+        </p>
+        <div class="modal__languages">
+          <figure class="modal__language">
+            <img class="modal__language--img" src="./assets/html-5.svg" alt="HTML5 Logo" />
+            <span class="language__name">HTML</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="./assets/css-alt.svg" alt="CSS Logo" />
+            <span class="language__name">CSS</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="./assets/JS LOGO.png" alt="JavaScript Logo" />
+            <span class="language__name">JavaScript</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img figma-logo" src="./assets/figma-icon.svg" alt="Figma Logo" />
+            <span class="language__name">Figma</span>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="modal__half modal__contact">
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+        <h3 class="modal__title modal__title--contact">Let's chat!</h3>
+        <h3 class="modal__sub-title modal__sub-title--contact">I am currently seeking out new opportunities.</h3>
+
+        <form id="contact__form" onsubmit="contact(event)" novalidate>
+          <div class="form__group">
+  <input type="text" id="name" name="user_name" class="input floating" placeholder=" " required />
+  <label for="name">Name</label>
+</div>
+
+<div class="form__group">
+  <input type="email" id="email" name="user_email" class="input floating" placeholder=" " required />
+  <label for="email">Email</label>
+</div>
+
+<div class="form__group">
+  <textarea id="message" name="message" class="input floating" placeholder=" " rows="4" required></textarea>
+  <label for="message">Message</label>
+</div>
+
+
+          <button id="contact__submit" class="form__submit" type="submit">Send it my way</button>
+        </form>
+
+        <div class="modal__overlay modal__overlay--loading">
+          <i class="fas fa-spinner"></i>
         </div>
 
-        <!-- Right Side -->
-        <div class="modal__half modal__contact">
-          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
-          <h3 class="modal__title modal__title--contact">Let's chat!</h3>
-          <h3 class="modal__sub-title modal__sub-title--contact">I am currently seeking out new opportunities.</h3>
-
-          <form id="contact__form" onsubmit="contact(event)">
-            <div class="form__item">
-              <label class="form__item--label" for="name">Name</label>
-              <input class="input" name="user_name" type="text" required />
-            </div>
-            <div class="form__item">
-              <label class="form__item--label" for="email">Email</label>
-              <input class="input" name="user_email" type="email" required />
-            </div>
-            <div class="form__item">
-              <label class="form__item--label" for="message">Message</label>
-              <textarea class="input" name="message" rows="4" required></textarea>
-            </div>
-            <button id="contact__submit" class="form__submit" type="submit">Send it my way</button>
-          </form>
-
-          <div class="modal__overlay modal__overlay--loading">
-            <i class="fas fa-spinner"></i>
-          </div>
-          <div class="modal__overlay modal__overlay--success">
-            Thanks for the message! Looking forward to speaking with you soon.
-          </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for the message! Looking forward to speaking with you soon.
         </div>
-        <!-- <i class="fas fa-times modal__exit click"></i> -->
       </div>
     </div>
   </section>
@@ -166,21 +169,23 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="row footer__row"></div>
-      <figure>
-        <img class="footer__logo--img" src="./assets/personal-logo-2.png" alt="Personal Logo" />
-      </figure>
-      <div class="footer__social--list">
-        <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">GitHub</a>
-        <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">LinkedIn</a>
-        <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Contact</a>
-        <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Resume</a>
-      </div>
-      <div class="footer__copyright">
-        Copyright © 2025 Justin Adame
+      <div class="row footer__row">
+        <figure>
+          <img class="footer__logo--img" src="./assets/personal-logo-2.png" alt="Personal Logo" />
+        </figure>
+        <div class="footer__social--list">
+          <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">GitHub</a>
+          <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">LinkedIn</a>
+          <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Contact</a>
+          <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white">Resume</a>
+        </div>
+        <div class="footer__copyright">
+          Copyright © 2025 Justin Adame
+        </div>
       </div>
     </div>
   </footer>
+
+  <script src="./index.js"></script>
 </body>
-<script src="./index.js"></script>
 </html>
