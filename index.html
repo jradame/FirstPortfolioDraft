@@ -28,7 +28,7 @@
       <ul class="nav__link--list">
         <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
         <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
-        <li class="nav__link"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a></li>
+        <li class="nav__link" onclick="toggleModal()"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a></li>
         <li class="nav__link click">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">
             <i class="fa-solid fa-circle-half-stroke"></i>
@@ -45,8 +45,8 @@
           👋 I'm a passionate new <b class="title--secondary">Frontend Developer</b>
           with a focus on crafting clean, responsive, and user-friendly interfaces. I'm diving deep into
           HTML, CSS, and JavaScript, building beautiful web experiences while continuously learning and growing
-          my skills in modern frontend technologies.<br />
-          Here's a little more <b class="title--secondary">about me.</b>
+          my skills in modern frontend technologies.<br>
+          Here's a little more <b class="title--secondary click" onclick="toggleModal()">about me.</b>
         </p>
         <div class="social__list">
           <a href="https://www.linkedin.com/in/justin-adame-022b6b97/" target="_blank" class="social__link click">
@@ -101,7 +101,7 @@
 
         <!-- Right Side -->
         <div class="modal__half modal__contact">
-          <i class="fas fa-times modal__exit click"></i>
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
           <h3 class="modal__title modal__title--contact">Let's chat!</h3>
           <h3 class="modal__sub-title modal__sub-title--contact">I am currently seeking out new opportunities.</h3>
 
