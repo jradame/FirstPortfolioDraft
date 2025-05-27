@@ -33,6 +33,10 @@ textarea:focus {
   border-color: #f06449;
 }
 
+
+
+
+
 .container {
   padding: 50px 0;
   width: 100%;
@@ -233,10 +237,17 @@ nav {
   width: 90%;
   max-width: 1100px;
   height: 700px;
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+  
   border-radius: 20px;
   overflow: hidden;
   display: flex;
+  visibility: hidden;
+}
+
+.modal--open .modal {
+  z-index: 60;
+box-shadow: 0 20px 80px rgba(0, 0, 0, 0.55);
+visibility: visible;
 }
 
 .modal__half {
@@ -391,7 +402,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 .modal__overlay--loading {
